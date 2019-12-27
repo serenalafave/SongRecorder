@@ -3,33 +3,15 @@
 -- Engineer: Serena LaFave
 -- 
 -- Create Date: 12/02/2019 04:46:44 PM
--- Design Name: 
 -- Module Name: FinalProject - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
+-- Project Name: Song Recorder with Playback Function
+-- Target Devices: xc7z010clg400-1
 -- 
 ----------------------------------------------------------------------------------
 
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity FinalProject is
   Port (clk : in STD_LOGIC;
@@ -60,7 +42,7 @@ component ssm2603_i2s
         ready: out std_logic);
 end component;
 
--- codec
+-- Audio Codec (SSM2603)
 signal r_data, l_data: std_logic_vector(23 downto 0);
 signal mclk_sig: std_logic;
 signal ready: std_logic;
@@ -90,9 +72,10 @@ signal play_cnt: integer range 0 to 50 := 0;
 type play_state_type is (PLAY_IDLE, PLAYING);
 signal play_state: play_state_type := PLAY_IDLE;
 
--- Lights
+-- LEDs
 signal light_sig: std_logic_vector(3 downto 0) := "0000";
 signal light_cnt: integer range 0 to 5 := 0;
+
 ------------------------------------------------------------
 
 begin
