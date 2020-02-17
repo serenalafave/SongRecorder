@@ -1,12 +1,9 @@
 ----------------------------------------------------------------------------------
 -- Created for: UB EE478
 -- Engineer: Serena LaFave
--- 
 -- Create Date: 12/02/2019 04:46:44 PM
--- Module Name: FinalProject - Behavioral
 -- Project Name: Song Recorder with Playback Function
 -- Target Devices: xc7z010clg400-1
--- 
 ----------------------------------------------------------------------------------
 
 library IEEE;
