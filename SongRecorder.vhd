@@ -1,5 +1,4 @@
 ----------------------------------------------------------------------------------
--- Created for: UB EE478
 -- Engineer: Serena LaFave
 -- Create Date: 12/02/2019 04:46:44 PM
 -- Project Name: Song Recorder with Playback Function
@@ -10,7 +9,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity FinalProject is
+entity SongRecorder is
   Port (clk : in STD_LOGIC;
         mode : in STD_LOGIC;
         btn0 : in STD_LOGIC;
@@ -23,9 +22,9 @@ entity FinalProject is
         mute : out STD_LOGIC;
         pbdat : out STD_LOGIC;
         pblrc : out STD_LOGIC);
-end FinalProject;
+end SongRecorder;
 
-architecture Behavioral of FinalProject is
+architecture Behavioral of SongRecorder is
 
 component ssm2603_i2s
   port (clk: in std_logic;
